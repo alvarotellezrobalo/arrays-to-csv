@@ -33,13 +33,13 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        if(row[elem].search(this.delimiter) === -1){
+                        if(typeof row[elem] === string && row[elem].search(this.delimiter) === -1){
                             this.csv += row[elem] + '\n';
                         }else{
                             this.csv += '"' + row[elem] + '"' + '\n';
                         }
                     }else{
-                        if(row[elem].search(this.delimiter) === -1){
+                        if(typeof row[elem] === string && row[elem].search(this.delimiter) === -1){
                             this.csv += row[elem] + this.delimiter;
                         }else{
                             this.csv += '"' + row[elem] + '"' + this.delimiter;
@@ -53,13 +53,13 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        if(row[elem].search(this.delimiter) === -1){
+                        if((typeof row[elem] === string && row[elem].search(this.delimiter) === -1) || (row[elem] === undefined || row[elem] === null)){
                             this.csv += row[elem] + '\n';
                         }else{
                             this.csv += '"' + row[elem] + '"' + '\n';
                         }
                     }else{
-                        if(row[elem].search(this.delimiter) === -1){
+                        if((typeof row[elem] === string && row[elem].search(this.delimiter) === -1) || (row[elem] === undefined || row[elem] === null)){
                             this.csv += row[elem] + this.delimiter;
                         }else{
                             this.csv += '"' + row[elem] + '"' + this.delimiter;
