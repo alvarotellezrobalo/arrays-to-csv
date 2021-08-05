@@ -19,26 +19,11 @@ class arrayToCsv {
                 //Headers from first element
                 Object.keys(row).forEach((elem, index, array) => {
 
-                    switch (typeof row[elem]) {
-                        case 'string':
-                            //Last element
-                            if(index === array.length-1){
-                                this.csv += '"' + elem + '"' + '\n';
-                            }else{
-                                this.csv += '"' + elem + '"' + this.delimiter;
-                            }
-                            break;
-                    
-                        default:
-                            //Last element
-                            if(index === array.length-1){
-                                this.csv += elem + '\n';
-                            }else{
-                                this.csv += elem + this.delimiter;
-                            }
-                            break;
+                    if(index === array.length-1){
+                        this.csv += '"' + elem + '"' + '\n';
+                    }else{
+                        this.csv += '"' + elem + '"' + this.delimiter;
                     }
-
 
                     aHeaders.push(elem);
                 });
@@ -49,33 +34,12 @@ class arrayToCsv {
                     //Last element
                     if(index === array.length-1){
 
-                        switch (typeof row[elem]) {
-                            case 'string':
-
-                                // if(row[elem].search(this.delimiter) === -1){
-                                //     this.csv += row[elem] + '\n';
-                                // }else{
-                                    this.csv += '"' + row[elem] + '"' + '\n';
-                                // }
-                                break;
+                        this.csv += '"' + row[elem] + '"' + '\n';
                         
-                            default:
-                                this.csv += row[elem] + '\n';
-                        }
                     }else{
-                        switch (typeof row[elem]) {
-                            case 'string':
 
-                                // if(row[elem].search(this.delimiter) === -1){
-                                //     this.csv += row[elem] + this.delimiter;
-                                // }else{
-                                    this.csv += '"' + row[elem] + '"' + this.delimiter;
-                                // }
-                                break;
+                        this.csv += '"' + row[elem] + '"' + this.delimiter;
                         
-                            default:
-                                this.csv += row[elem] + this.delimiter;
-                        }
                     }
                 });
 
@@ -86,33 +50,12 @@ class arrayToCsv {
                     //Last element
                     if(index === array.length-1){
 
-                        switch (typeof row[elem]) {
-                            case 'string':
+                        this.csv += '"' + row[elem] + '"' + '\n';
 
-                                // if(row[elem].search(this.delimiter) === -1){
-                                //     this.csv += row[elem] + '\n';
-                                // }else{
-                                    this.csv += '"' + row[elem] + '"' + '\n';
-                                // }
-                                break;
-                        
-                            default:
-                                this.csv += row[elem] + '\n';
-                        }
                     }else{
-                        switch (typeof row[elem]) {
-                            case 'string':
 
-                                // if(row[elem].search(this.delimiter) === -1){
-                                //     this.csv += row[elem] + this.delimiter;
-                                // }else{
-                                    this.csv += '"' + row[elem] + '"' + this.delimiter;
-                                // }
-                                break;
+                        this.csv += '"' + row[elem] + '"' + this.delimiter;
                         
-                            default:
-                                this.csv += row[elem] + this.delimiter;
-                        }
                     }
                 });
             }
