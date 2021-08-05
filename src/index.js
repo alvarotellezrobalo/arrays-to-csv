@@ -38,11 +38,11 @@ class arrayToCsv {
                         switch (typeof row[elem]) {
                             case 'string':
 
-                                if(row[elem].search(this.delimiter) === -1){
-                                    this.csv += row[elem] + '\n';
-                                }else{
+                                // if(row[elem].search(this.delimiter) === -1){
+                                //     this.csv += row[elem] + '\n';
+                                // }else{
                                     this.csv += '"' + row[elem] + '"' + '\n';
-                                }
+                                // }
                                 break;
                         
                             default:
@@ -52,11 +52,11 @@ class arrayToCsv {
                         switch (typeof row[elem]) {
                             case 'string':
 
-                                if(row[elem].search(this.delimiter) === -1){
-                                    this.csv += row[elem] + this.delimiter;
-                                }else{
+                                // if(row[elem].search(this.delimiter) === -1){
+                                //     this.csv += row[elem] + this.delimiter;
+                                // }else{
                                     this.csv += '"' + row[elem] + '"' + this.delimiter;
-                                }
+                                // }
                                 break;
                         
                             default:
@@ -75,11 +75,11 @@ class arrayToCsv {
                         switch (typeof row[elem]) {
                             case 'string':
 
-                                if(row[elem].search(this.delimiter) === -1){
-                                    this.csv += row[elem] + '\n';
-                                }else{
+                                // if(row[elem].search(this.delimiter) === -1){
+                                //     this.csv += row[elem] + '\n';
+                                // }else{
                                     this.csv += '"' + row[elem] + '"' + '\n';
-                                }
+                                // }
                                 break;
                         
                             default:
@@ -89,11 +89,11 @@ class arrayToCsv {
                         switch (typeof row[elem]) {
                             case 'string':
 
-                                if(row[elem].search(this.delimiter) === -1){
-                                    this.csv += row[elem] + this.delimiter;
-                                }else{
+                                // if(row[elem].search(this.delimiter) === -1){
+                                //     this.csv += row[elem] + this.delimiter;
+                                // }else{
                                     this.csv += '"' + row[elem] + '"' + this.delimiter;
-                                }
+                                // }
                                 break;
                         
                             default:
