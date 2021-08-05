@@ -19,12 +19,26 @@ class arrayToCsv {
                 //Headers from first element
                 Object.keys(row).forEach((elem, index, array) => {
 
-                    //Last element
-                    if(index === array.length-1){
-                        this.csv += elem + '\n';
-                    }else{
-                        this.csv += elem + this.delimiter;
+                    switch (typeof row[elem]) {
+                        case 'string':
+                            //Last element
+                            if(index === array.length-1){
+                                this.csv += '"' + elem + '"' + '\n';
+                            }else{
+                                this.csv += '"' + elem + '"' + this.delimiter;
+                            }
+                            break;
+                    
+                        default:
+                            //Last element
+                            if(index === array.length-1){
+                                this.csv += elem + '\n';
+                            }else{
+                                this.csv += elem + this.delimiter;
+                            }
+                            break;
                     }
+
 
                     aHeaders.push(elem);
                 });
