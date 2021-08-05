@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { type } = require('os');
 
 class arrayToCsv {
 
@@ -33,16 +34,33 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        if(typeof row[elem] === string && row[elem].search(this.delimiter) === -1){
-                            this.csv += row[elem] + '\n';
-                        }else{
-                            this.csv += '"' + row[elem] + '"' + '\n';
+
+                        switch (typeof row[elem]) {
+                            case 'string':
+
+                                if(row[elem].search(this.delimiter) === -1){
+                                    this.csv += row[elem] + '\n';
+                                }else{
+                                    this.csv += '"' + row[elem] + '"' + '\n';
+                                }
+                                break;
+                        
+                            default:
+                                this.csv += row[elem] + '\n';
                         }
                     }else{
-                        if(typeof row[elem] === string && row[elem].search(this.delimiter) === -1){
-                            this.csv += row[elem] + this.delimiter;
-                        }else{
-                            this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        switch (typeof row[elem]) {
+                            case 'string':
+
+                                if(row[elem].search(this.delimiter) === -1){
+                                    this.csv += row[elem] + this.delimiter;
+                                }else{
+                                    this.csv += '"' + row[elem] + '"' + this.delimiter;
+                                }
+                                break;
+                        
+                            default:
+                                this.csv += row[elem] + this.delimiter;
                         }
                     }
                 });
@@ -53,16 +71,33 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        if((typeof row[elem] === string && row[elem].search(this.delimiter) === -1) || (row[elem] === undefined || row[elem] === null)){
-                            this.csv += row[elem] + '\n';
-                        }else{
-                            this.csv += '"' + row[elem] + '"' + '\n';
+
+                        switch (typeof row[elem]) {
+                            case 'string':
+
+                                if(row[elem].search(this.delimiter) === -1){
+                                    this.csv += row[elem] + '\n';
+                                }else{
+                                    this.csv += '"' + row[elem] + '"' + '\n';
+                                }
+                                break;
+                        
+                            default:
+                                this.csv += row[elem] + '\n';
                         }
                     }else{
-                        if((typeof row[elem] === string && row[elem].search(this.delimiter) === -1) || (row[elem] === undefined || row[elem] === null)){
-                            this.csv += row[elem] + this.delimiter;
-                        }else{
-                            this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        switch (typeof row[elem]) {
+                            case 'string':
+
+                                if(row[elem].search(this.delimiter) === -1){
+                                    this.csv += row[elem] + this.delimiter;
+                                }else{
+                                    this.csv += '"' + row[elem] + '"' + this.delimiter;
+                                }
+                                break;
+                        
+                            default:
+                                this.csv += row[elem] + this.delimiter;
                         }
                     }
                 });
