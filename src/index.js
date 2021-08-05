@@ -33,9 +33,17 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        this.csv += row[elem] + '\n';
+                        if(row[elem].search(this.delimiter) === -1){
+                            this.csv += row[elem] + '\n';
+                        }else{
+                            this.csv += '"' + row[elem] + '"' + '\n';
+                        }
                     }else{
-                        this.csv += row[elem] + this.delimiter;
+                        if(row[elem].search(this.delimiter) === -1){
+                            this.csv += row[elem] + this.delimiter;
+                        }else{
+                            this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        }
                     }
                 });
 
@@ -45,9 +53,17 @@ class arrayToCsv {
 
                     //Last element
                     if(index === array.length-1){
-                        this.csv += row[elem] + '\n';
+                        if(row[elem].search(this.delimiter) === -1){
+                            this.csv += row[elem] + '\n';
+                        }else{
+                            this.csv += '"' + row[elem] + '"' + '\n';
+                        }
                     }else{
-                        this.csv += row[elem] + this.delimiter;
+                        if(row[elem].search(this.delimiter) === -1){
+                            this.csv += row[elem] + this.delimiter;
+                        }else{
+                            this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        }
                     }
                 });
             }
