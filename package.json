@@ -1,6 +1,6 @@
 {
   "name": "arrays-to-csv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NPM package to write CSV files/String from Array",
   "main": "src/index.js",
   "scripts": {
