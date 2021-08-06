@@ -4,9 +4,11 @@ const { type } = require('os');
 class arrayToCsv {
 
     constructor(data = [], params = {
-        delimiter: ','
+        delimiter: ',',
+        quote: '"'
     }){
-        this.delimiter = params.delimiter ? params.delimiter : ',';
+        this.delimiter = params.delimiter;
+        this.quote = params.quote;
         this.data = data;
         this.csv = '';
 
@@ -20,9 +22,9 @@ class arrayToCsv {
                 Object.keys(row).forEach((elem, index, array) => {
 
                     if(index === array.length-1){
-                        this.csv += '"' + elem + '"' + '\n';
+                        this.csv += this.quote + elem + this.quote + '\n';
                     }else{
-                        this.csv += '"' + elem + '"' + this.delimiter;
+                        this.csv += this.quote + elem + this.quote + this.delimiter;
                     }
 
                     aHeaders.push(elem);
@@ -34,11 +36,11 @@ class arrayToCsv {
                     //Last element
                     if(index === array.length-1){
 
-                        this.csv += '"' + row[elem] + '"' + '\n';
+                        this.csv += this.quote + row[elem] + this.quote + '\n';
                         
                     }else{
 
-                        this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        this.csv += this.quote + row[elem] + this.quote + this.delimiter;
                         
                     }
                 });
@@ -50,11 +52,11 @@ class arrayToCsv {
                     //Last element
                     if(index === array.length-1){
 
-                        this.csv += '"' + row[elem] + '"' + '\n';
+                        this.csv += this.quote + row[elem] + this.quote + '\n';
 
                     }else{
 
-                        this.csv += '"' + row[elem] + '"' + this.delimiter;
+                        this.csv += this.quote + row[elem] + this.quote + this.delimiter;
                         
                     }
                 });
