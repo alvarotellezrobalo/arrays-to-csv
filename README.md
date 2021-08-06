@@ -80,3 +80,9 @@ var csvGenerator = new arrayToCsv(data, { delimiter: ',' });
 csVGenerator.saveFile('./data.csv');
 
 ```
+# Params new arrayToCsv(data, params = {})
+
+Param  | Default value
+------------- | -------------
+delimiter  | ,
+quote  | "
